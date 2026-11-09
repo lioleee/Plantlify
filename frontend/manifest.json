@@ -1,0 +1,19 @@
+
+{
+  "name": "Plantify - Plants, Life, You",
+  "short_name": "Plantify",
+  "description": "Bring nature into your everyday life.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F8F7F0",
+  "theme_color": "#234B36",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/plantify-logo-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plantify | Plants • Life • You</title>
+
+    <meta name="description" content="Discover beautiful indoor plants, succulents and planters at Plantify. Bring nature into your home.">
+
+    <!-- PWA SETTINGS -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#234B36">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Plantify">
+
+    <!-- APP ICON -->
+    <link rel="icon" type="image/png" href="assets/plantify-logo-transparent.png">
+    <link rel="apple-touch-icon" href="assets/plantify-logo-transparent.png">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+
+        <a href="#home" class="brand" aria-label="Plantify home">
+            <img
+                src="assets/plantify-logo-transparent.png"
+                alt="Plantify - Plants, Life, You"
+                class="brand-logo">
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+            <a href="#home" class="active">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#plants">Shop Plants</a>
+            <a href="#about">Our Story</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                class="search-button"
+                id="search-toggle"
+                aria-label="Open plant search">
+                ⌕
+            </button>
+
+            <button class="cart-link" id="open-cart">
+                Cart
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- SEARCH PANEL -->
+    <div class="search-panel" id="search-panel">
+
+        <input
+            type="search"
+            id="plant-search"
+            placeholder="Search for a plant..."
+            aria-label="Search plants">
+
+        <button id="search-submit">Search</button>
+
+    </div>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">BRING NATURE CLOSER</p>
+
+                <h1>
+                    Bring Nature<br>
+                    Into Your Home.
+                </h1>
+
+                <p class="hero-description">
+                    Discover beautiful plants that make your space
+                    feel fresh, peaceful and full of life.
+                </p>
+
+                <a href="#plants" class="primary-btn">
+                    Explore Plants <span>→</span>
+                </a>
+
+                <div class="hero-features">
+                    <span>✓ Beautiful indoor plants</span>
+                    <span>✓ Nature-inspired living</span>
+                </div>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+            <div class="hero-image">
+
+                <img
+                    class="hero-main-image"
+                    src="assets/hero-blue-plant.png"
+                    alt="Beautiful collection of green indoor plants">
+
+                <!-- LEFT HANGING PLANT -->
+                <div class="hanging-plant hanging-plant-one">
+
+                    <img
+                        src="assets/hanging-plant-left.png"
+                        alt="">
+
+                </div>
+
+                <!-- RIGHT HANGING PLANT -->
+                <div class="hanging-plant hanging-plant-two">
+
+                    <img
+                        src="assets/hanging-plant-right.png"
+                        alt="">
+
+                </div>
+
+                <!-- IMAGE CAPTION -->
+                <div class="image-note">
+                    Nature for your everyday life
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="section-padding categories" id="categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">EXPLORE OUR COLLECTION</p>
+                    <h2>Find Your Green.</h2>
+                </div>
+
+                <p>
+                    Find the perfect plant for every corner of your home.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <a
+                    href="#plants"
+                    class="category-card"
+                    data-category="Indoor Plant">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=85"
+                        alt="Indoor plants">
+
+                    <div class="category-overlay">
+                        <h3>Indoor Plants</h3>
+                        <span>Explore collection →</span>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="#plants"
+                    class="category-card"
+                    data-category="Succulent">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&w=600&q=85"
+                        alt="Succulent plants">
+
+                    <div class="category-overlay">
+                        <h3>Succulents</h3>
+                        <span>Explore collection →</span>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="#plants"
+                    class="category-card"
+                    data-category="Planter">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=600&q=85"
+                        alt="Decorative plant pots">
+
+                    <div class="category-overlay">
+                        <h3>Plant Pots</h3>
+                        <span>Explore collection →</span>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="#plants"
+                    class="category-card"
+                    data-category="Hanging Plant">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=85"
+                        alt="Hanging plants">
+
+                    <div class="category-overlay">
+                        <h3>Hanging Plants</h3>
+                        <span>Explore collection →</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="section-padding featured" id="plants">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">OUR FAVOURITES</p>
+                    <h2>Plants You'll Love.</h2>
+                </div>
+
+                <p>
+                    A little greenery goes a long way.
+                </p>
+
+            </div>
+
+
+            <div class="product-grid">
+
+                <!-- PRODUCT 1 -->
+                <article
+                    class="product-card"
+                    data-name="Monstera Deliciosa"
+                    data-category="Indoor Plant">
+
+                    <div class="product-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=85"
+                            alt="Monstera indoor plant">
+                    </div>
+
+                    <p class="product-category">INDOOR PLANT</p>
+                    <h3>Monstera Deliciosa</h3>
+
+                    <div class="product-bottom">
+                        <span class="price">Rs. 2,500</span>
+
+                        <button
+                            class="add-btn"
+                            data-name="Monstera Deliciosa"
+                            data-price="2500">
+                            Add +
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+                <article
+                    class="product-card"
+                    data-name="Peace Lily"
+                    data-category="Indoor Plant">
+
+                    <div class="product-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=85"
+                            alt="Peace Lily plant">
+                    </div>
+
+                    <p class="product-category">INDOOR PLANT</p>
+                    <h3>Peace Lily</h3>
+
+                    <div class="product-bottom">
+                        <span class="price">Rs. 1,800</span>
+
+                        <button
+                            class="add-btn"
+                            data-name="Peace Lily"
+                            data-price="1800">
+                            Add +
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+                <article
+                    class="product-card"
+                    data-name="Mini Succulent"
+                    data-category="Succulent">
+
+                    <div class="product-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&w=600&q=85"
+                            alt="Mini succulent plant">
+                    </div>
+
+                    <p class="product-category">SUCCULENT</p>
+                    <h3>Mini Succulent</h3>
+
+                    <div class="product-bottom">
+                        <span class="price">Rs. 950</span>
+
+                        <button
+                            class="add-btn"
+                            data-name="Mini Succulent"
+                            data-price="950">
+                            Add +
+                        </button>
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+                <article
+                    class="product-card"
+                    data-name="Rubber Plant"
+                    data-category="Indoor Plant">
+
+                    <div class="product-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=600&q=85"
+                            alt="Rubber indoor plant">
+                    </div>
+
+                    <p class="product-category">INDOOR PLANT</p>
+                    <h3>Rubber Plant</h3>
+
+                    <div class="product-bottom">
+                        <span class="price">Rs. 3,200</span>
+
+                        <button
+                            class="add-btn"
+                            data-name="Rubber Plant"
+                            data-price="3200">
+                            Add +
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="no-results" id="no-results">
+                No plants found. Try another search.
+            </p>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="section-padding about-section" id="about">
+
+            <div class="about">
+
+                <div class="about-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=85"
+                        alt="Plants decorating a peaceful home">
+                </div>
+
+                <div class="about-content">
+
+                    <p class="eyebrow">OUR STORY</p>
+
+                    <h2>
+                        A Little Green.<br>
+                        A Lot of Happiness.
+                    </h2>
+
+                    <p class="about-text">
+                        At Plantify, we believe plants make every space
+                        more beautiful. Our collection is designed to
+                        bring nature, freshness and calm into your home.
+                    </p>
+
+                    <div class="benefits">
+                        <p>✓ Bring natural beauty into your home</p>
+                        <p>✓ Create peaceful living spaces</p>
+                        <p>✓ Discover plants for every lifestyle</p>
+                    </div>
+
+                    <a href="#plants" class="primary-btn">
+                        Discover Our Plants <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="#home" class="footer-brand">
+            <img
+                src="assets/plantify-logo-transparent.png"
+                alt="Plantify logo">
+        </a>
+
+        <p>Plants • Life • You</p>
+
+        <p class="copyright">
+            © 2026 Plantify. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- CART MODAL -->
+    <div class="modal-backdrop" id="cart-modal" aria-hidden="true">
+
+        <div
+            class="cart-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cart-title">
+
+            <div class="modal-header">
+
+                <h2 id="cart-title">Your Shopping Cart</h2>
+
+                <button
+                    id="close-cart"
+                    class="close-button"
+                    aria-label="Close cart">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">
+                    Your cart is currently empty.
+                </p>
+            </div>
+
+            <div class="cart-total">
+                <strong>Total</strong>
+                <strong id="cart-total">Rs. 0</strong>
+            </div>
+
+            <button class="checkout-button" id="checkout-button">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+
+    <!-- PWA SERVICE WORKER REGISTRATION -->
+    <script>
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", function () {
+
+                navigator.serviceWorker.register("./service-worker.js")
+
+                    .then(function (registration) {
+                        console.log(
+                            "Plantify Service Worker registered successfully:",
+                            registration.scope
+                        );
+                    })
+
+                    .catch(function (error) {
+                        console.error(
+                            "Plantify Service Worker registration failed:",
+                            error
+                        );
+                    });
+
+            });
+
+        }
+    </script>
+
+</body>
+</html>

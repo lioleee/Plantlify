@@ -1,0 +1,1323 @@
+/* =========================================
+   PLANTIFY - COMPLETE STYLESHEET
+========================================= */
+
+:root {
+    --forest: #234B36;
+    --forest-light: #355F45;
+    --sage: #A8B99A;
+    --cream: #F8F7F0;
+    --white: #FFFFFF;
+    --dark: #26352B;
+    --muted: #727D73;
+    --border: #E7E9DF;
+}
+
+
+/* =========================================
+   GLOBAL STYLING
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================
+   NAVIGATION BAR
+========================================= */
+
+.navbar {
+    min-height: 100px;
+    padding: 10px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    background: #FFFEFA;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 5px 22px rgba(35, 75, 54, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    width: 150px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav-links a {
+    color: var(--forest);
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+    padding: 10px 0;
+
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #78916D;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--sage);
+
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+
+    color: var(--forest);
+    font-size: 30px;
+
+    padding: 5px;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--forest);
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: background 0.3s;
+}
+
+.cart-link:hover {
+    background: var(--forest-light);
+}
+
+.cart-count {
+    width: 23px;
+    height: 23px;
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--sage);
+    color: var(--forest);
+
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: var(--forest);
+    font-size: 26px;
+}
+
+
+/* =========================================
+   SEARCH PANEL
+========================================= */
+
+.search-panel {
+    display: none;
+
+    justify-content: center;
+    gap: 10px;
+
+    padding: 18px 7%;
+
+    background: #F0F1E9;
+}
+
+.search-panel.show {
+    display: flex;
+}
+
+.search-panel input {
+    width: min(500px, 100%);
+
+    padding: 12px 16px;
+
+    border: 1px solid #D9E0D3;
+    border-radius: 5px;
+
+    outline: none;
+    background: white;
+}
+
+.search-panel input:focus {
+    border-color: var(--forest);
+}
+
+.search-panel button {
+    padding: 12px 22px;
+
+    background: var(--forest);
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 580px;
+
+    padding: 70px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 60px;
+}
+
+.eyebrow {
+    color: #71856A;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1,
+.section-heading h2,
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--forest);
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.hero-description {
+    max-width: 430px;
+
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    margin: 22px 0 30px;
+
+    font-size: 15px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    background: var(--forest);
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: var(--forest-light);
+    transform: translateY(-3px);
+}
+
+.primary-btn span {
+    font-size: 19px;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin-top: 30px;
+
+    color: var(--forest);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   HERO IMAGE AND NATURAL HANGING PLANTS
+========================================= */
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    min-width: 0;
+    isolation: isolate;
+}
+
+/* Main hero image */
+
+.hero-image > img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    border-radius: 180px 180px 8px 8px;
+}
+
+/* Hanging plants */
+
+.hanging-plant {
+    position: absolute;
+
+    width: 125px;
+    height: 165px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Hanging plant images */
+
+.hanging-plant img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center top;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Left plant: closer to the image edge */
+
+.hanging-plant-one {
+    top: -18px;
+    left: 12px;
+}
+
+/* Right plant: naturally hanging from top edge */
+
+.hanging-plant-two {
+    top: 35px;
+    right: 12px;
+}
+
+/* Image caption */
+
+.image-note {
+    position: absolute;
+
+    left: 20px;
+    bottom: 25px;
+
+    z-index: 5;
+
+    background: white;
+
+    padding: 15px 22px;
+
+    color: var(--forest);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+}
+
+/* =========================================
+   HERO IMAGE - MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .hero-image {
+        height: 380px;
+    }
+
+    .hanging-plant {
+        width: 85px;
+        height: 120px;
+    }
+
+    .hanging-plant-one {
+        top: -10px;
+        left: 8px;
+    }
+
+    .hanging-plant-two {
+        top: 25px;
+        right: 8px;
+    }
+
+    .image-note {
+        left: 10px;
+        bottom: 15px;
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .hero-image {
+        height: 320px;
+    }
+
+    .hanging-plant {
+        width: 70px;
+        height: 100px;
+    }
+}
+
+
+
+
+/* Main hero image only */
+
+.hero-image > .hero-main-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 180px 180px 8px 8px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Hanging plant containers */
+
+.hanging-plant {
+    position: absolute;
+
+    width: 140px;
+    height: 180px;
+
+    z-index: 5;
+
+    overflow: visible;
+    pointer-events: none;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* Hanging plant images */
+
+.hanging-plant img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* Left hanging plant */
+
+.hanging-plant-one {
+    top: -35px;
+    left: -35px;
+}
+
+
+/* Right hanging plant */
+
+.hanging-plant-two {
+    top: 35px;
+    right: -35px;
+}
+
+
+/* Hero image caption */
+
+.image-note {
+    position: absolute;
+
+    left: -20px;
+    bottom: 25px;
+
+    background: white;
+
+    padding: 15px 22px;
+
+    color: var(--forest);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+
+    z-index: 6;
+}
+
+
+/* =========================================
+   SHARED SECTION STYLING
+========================================= */
+
+.section-padding {
+    padding: 85px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 25px;
+
+    margin-bottom: 38px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-size: 39px;
+    line-height: 1.25;
+}
+
+.section-heading > p {
+    max-width: 350px;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.category-card {
+    height: 275px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background: #E4E9DE;
+}
+
+.category-card img {
+    height: 100%;
+
+    transition: transform 0.5s;
+}
+
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    padding: 22px;
+
+    color: white;
+
+    background: linear-gradient(
+        transparent 25%,
+        rgba(16, 40, 29, 0.85)
+    );
+}
+
+.category-overlay h3 {
+    color: white;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+.category-overlay span {
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FEATURED PRODUCTS
+========================================= */
+
+.featured {
+    background: #F0F1E9;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.product-card {
+    min-width: 0;
+
+    padding: 12px;
+
+    background: white;
+
+    border: 1px solid #ECEDE7;
+    border-radius: 6px;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(35, 60, 41, 0.09);
+}
+
+.product-image {
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #E8EDE5;
+}
+
+.product-image img {
+    height: 100%;
+
+    transition: transform 0.4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-category {
+    color: #82917C;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-top: 17px;
+}
+
+.product-card h3 {
+    color: var(--forest);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+
+    margin: 7px 0 15px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.price {
+    color: var(--forest);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.add-btn {
+    padding: 8px 14px;
+
+    border: 1px solid var(--forest);
+    border-radius: 3px;
+
+    background: white;
+    color: var(--forest);
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: var(--forest);
+    color: white;
+}
+
+.no-results {
+    display: none;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #E8EDE5;
+}
+
+.about-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+.about-text {
+    color: var(--muted);
+
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 23px 0 28px;
+
+    color: var(--forest);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: var(--forest);
+    color: white;
+
+    padding: 45px 8%;
+
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-brand img {
+    width: 135px;
+    height: 70px;
+
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+.footer p {
+    color: #D5DFD2;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+.footer .copyright {
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #B8C8B5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CART MODAL
+========================================= */
+
+.modal-backdrop {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(15, 31, 21, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal-backdrop.show {
+    display: flex;
+}
+
+.cart-modal {
+    width: min(500px, 100%);
+
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 25px;
+
+    background: var(--cream);
+
+    border-radius: 8px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+    color: var(--forest);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.close-button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--forest);
+
+    font-size: 28px;
+}
+
+.cart-items {
+    padding: 20px 0;
+}
+
+.empty-cart {
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-item-info strong {
+    display: block;
+
+    color: var(--forest);
+
+    font-size: 14px;
+}
+
+.cart-item-info span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.cart-item button {
+    border: none;
+
+    background: transparent;
+
+    color: #A34D42;
+
+    font-size: 12px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--forest);
+}
+
+.checkout-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: var(--forest);
+    color: white;
+
+    font-weight: 600;
+}
+
+.checkout-button:hover {
+    background: var(--forest-light);
+}
+
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .brand-logo {
+        width: 120px;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+
+        gap: 35px;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-padding {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+
+    html {
+        scroll-padding-top: 145px;
+    }
+
+    .navbar {
+        min-height: 80px;
+
+        padding: 8px 5%;
+
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .brand-logo {
+        width: 115px;
+        height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-actions {
+        order: 3;
+        gap: 8px;
+    }
+
+    .nav-links {
+        display: none;
+
+        order: 4;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+
+        padding: 15px 5px;
+
+        border-top: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .cart-link {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 48px 6%;
+
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    /* Hero image on mobile */
+
+    .hero-image {
+        width: 100%;
+        max-width: 420px;
+
+        height: 400px;
+
+        margin: 20px auto 0;
+    }
+
+    .hanging-plant {
+        width: 100px;
+        height: 135px;
+    }
+
+    .hanging-plant-one {
+        top: -20px;
+        left: -10px;
+    }
+
+    .hanging-plant-two {
+        top: 25px;
+        right: -10px;
+    }
+
+    .image-note {
+        left: 5px;
+        bottom: 15px;
+
+        padding: 12px 16px;
+
+        font-size: 12px;
+    }
+
+    .section-padding {
+        padding: 55px 6%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 31px;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .category-card {
+        height: 200px;
+    }
+
+    .category-overlay {
+        padding: 12px;
+    }
+
+    .category-overlay h3 {
+        font-size: 17px;
+    }
+
+    .category-overlay span {
+        font-size: 10px;
+    }
+
+    .product-image {
+        height: 155px;
+    }
+
+    .product-card h3 {
+        font-size: 15px;
+    }
+
+    .product-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 280px;
+    }
+
+    .search-panel {
+        padding: 15px 5%;
+    }
+
+    .search-panel button {
+        padding: 10px 14px;
+    }
+
+    .footer {
+        padding: 35px 6%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .brand-logo {
+        width: 95px;
+    }
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 240px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .hanging-plant {
+        width: 75px;
+        height: 105px;
+    }
+
+    .hanging-plant-one {
+        left: -5px;
+    }
+
+    .hanging-plant-two {
+        right: -5px;
+    }
+
+}
